@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 15px;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px gray;
+            display: inline-block;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 95%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1 class="band-name band-name-large">The Generics</h1>
+
+       
+    </header>
+    <br><br><br><br><br><br><br><br><br>
+    <h2>Contact Us</h2>
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" rows="3" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="confirmation" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+
+    <script>
+        function sendMessage(event) {
+            event.preventDefault(); // Prevent page refresh
+            document.getElementById("confirmation").innerText = "Message Sent!";
+            document.querySelector("form").reset();
+        }
+    </script>
+
+</body>
+</html>
